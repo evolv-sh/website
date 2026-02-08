@@ -11,7 +11,6 @@
     <link href="./style.css" rel="stylesheet">
 
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="./script.js" defer></script>
 </head>
 <body>
     <nav>
@@ -29,23 +28,25 @@
     <div class="container">
         
         <section class="hero">
-            <div class="tagline">
-                <i data-lucide="terminal-square" size="14"></i>
-                DevOps-as-a-Service
-            </div>
+            <div class="hero-content">
+                <div class="tagline">
+                    <i data-lucide="terminal-square" size="14"></i>
+                    DevOps-as-a-Service
+                </div>
 
-            <h1>
-                Infrastructure that<br>
-                <span class="text-indigo">scales while you sleep.</span>
-            </h1>
+                <h1>
+                    Infrastructure that<br>
+                    <span class="text-indigo">scales while you sleep.</span>
+                </h1>
 
-            <p>
-                Stop deploying manually. We evolve your fragile, slow manual processes into automated, resilient, and scalable systems.
-            </p>
+                <p>
+                    Stop deploying manually. We evolve your fragile, slow manual processes into automated, resilient, and scalable systems.
+                </p>
 
-            <div style="display: flex; gap: 12px; margin-bottom: 60px; flex-wrap: wrap;">
-                <a href="#services" class="btn btn-primary">View Solutions</a>
-                <a href="#stack" class="btn btn-outline">Tech Stack</a>
+                <div style="display: flex; gap: 12px; margin-bottom: 60px; flex-wrap: wrap;">
+                    <a href="#services" class="btn btn-primary">View Solutions</a>
+                    <a href="#stack" class="btn btn-outline">Tech Stack</a>
+                </div>
             </div>
 
             <div class="terminal-container">
@@ -66,6 +67,7 @@
                             Resource actions are indicated with the following symbols:<br>
                             <span style="color: var(--emerald);">+ create</span>
                         </span>
+                        
                         <div class="cmd-line">
                             <span class="prompt">➜</span>
                             <span>docker compose up -d --scale web=5</span>
@@ -80,9 +82,10 @@
                             ✔ Container web-4 Started<br>
                             ✔ Container web-5 Started
                         </span>
+
                         <div class="cmd-line">
                             <span class="prompt">➜</span>
-                            <span class="cursor"></span>
+                            <span class="typing-area"></span><span class="cursor"></span>
                         </div>
                     </div>
                 </div>
@@ -251,9 +254,21 @@
                 <div>
                     <h4 style="margin-bottom: 16px; color: white;">Connect</h4>
                     <ul style="list-style: none;">
-                        <li style="margin-bottom: 8px;"><a href="#" style="color: inherit; text-decoration: none;">GitHub Organization</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#" style="color: inherit; text-decoration: none;">Email Us</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#" style="color: inherit; text-decoration: none;">LinkedIn</a></li>
+                        <li style="margin-bottom: 8px;">
+                            <a href="https://github.com/evolv-sh" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                                <i data-lucide="github" size="16"></i> GitHub Organization
+                            </a>
+                        </li>
+                        <li style="margin-bottom: 8px;">
+                            <a href="mailto:ilhamdzaky2007@gmail.com?subject=Inquiry%20regarding%20DevOps%20Services&body=Hi%20evolv.tech%20team%2C%0A%0AI%27m%20interested%20in%20your%20DevOps%20services.%20Could%20we%20schedule%20a%20call%20to%20discuss%20our%20infrastructure%20needs%3F%0A%0ABest%20regards%2C" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                                <i data-lucide="mail" size="16"></i> Email Us
+                            </a>
+                        </li>
+                        <li style="margin-bottom: 8px;">
+                            <a href="#" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                                <i data-lucide="linkedin" size="16"></i> LinkedIn
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -264,5 +279,10 @@
         </footer>
 
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <script src="script.js"></script>
 </body>
 </html>
