@@ -52,5 +52,3 @@ python3 -m http.server
 ## License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
-
-**Note:** The branding assets (logo, copy) are proprietary to **evolv.tech**.
