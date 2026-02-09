@@ -1,9 +1,8 @@
 :root {
-    /* Palette */
+    /* Color Palette */
     --bg-void: #050505;
     --bg-panel: #0a0a0c;
     --bg-panel-hover: #121214;
-
     --border: #222224;
 
     --indigo: #6366f1;
@@ -25,7 +24,7 @@
     --font-code: "JetBrains Mono", monospace;
     --font-hand: "Kalam", cursive;
 
-    /* Grid Settings (Bodylog Style) */
+    /* Grid Configuration */
     --grid-size: 40px;
     --grid-color: rgba(255, 255, 255, 0.035);
 }
@@ -53,7 +52,7 @@ body {
 
 /* Symmetric Container */
 .container {
-    max-width: 1040px; /* Lebar pas dengan grid */
+    max-width: 1040px; /* Matches grid width alignment */
     margin: 0 auto;
     padding: 0 40px;
     position: relative;
@@ -239,30 +238,33 @@ h1 {
 }
 
 .cmd-line {
-    display: flex;
-    gap: 10px;
+    font-family: var(--font-code);
+    font-size: 0.9rem;
+    line-height: 1.6;
     margin-bottom: 6px;
+    word-wrap: break-word;
 }
+
 .prompt {
-    color: var(--text-secondary);
+    color: #555;
+    margin-right: 10px;
+    user-select: none;
+    float: left;
 }
-.output {
-    color: var(--text-secondary);
-    margin-bottom: 16px;
-    display: block;
-    opacity: 0.7;
-}
+
 .cursor {
     display: inline-block;
     width: 8px;
-    height: 1.1em;
+    height: 1.2em;
     background: var(--indigo);
     animation: blink 1s infinite;
+
+    vertical-align: text-bottom;
+    margin-bottom: 0px;
+    margin-left: 2px;
 }
 
-/* =========================================
-           ARROW SYSTEM (Cleaned Up)
-           ========================================= */
+/* Arrow System */
 .arrow-wrapper {
     position: absolute;
     z-index: 20;
@@ -276,7 +278,7 @@ h1 {
     font-family: var(--font-hand);
     font-size: 1.3rem;
     font-weight: 700;
-    text-shadow: 3px 3px 0px #000; /* Outline kuat agar tidak nyatu */
+    text-shadow: 3px 3px 0px #000; /* Strong outline for contrast */
     white-space: nowrap;
     margin-bottom: -5px;
 }
@@ -286,7 +288,7 @@ h1 {
     overflow: visible;
 }
 
-/* 1. HERO ARROW (Right Side) */
+/* Hero Arrow */
 .arrow-hero {
     right: -110px;
     bottom: 40px;
@@ -299,12 +301,12 @@ h1 {
     stroke: var(--marker-yellow);
 }
 
-/* 2. STACK ARROW (Left Side - "Ga usah dipindah") */
+/* Stack Arrow */
 .arrow-stack {
     left: -80px;
     top: -30px;
     transform: rotate(-10deg);
-    align-items: flex-end; /* Text rata kanan terhadap panah */
+    align-items: flex-end; /* Text right-aligned relative to arrow */
 }
 .arrow-stack .arrow-text {
     color: var(--marker-pink);
@@ -315,8 +317,7 @@ h1 {
     stroke: var(--marker-pink);
 }
 
-/* 3. PRICING ARROW (Bottom Center - Safe Zone) */
-/* Dipindah ke bawah tombol agar tidak menutupi Badge/Harga */
+/* Pricing Arrow */
 .arrow-pricing {
     bottom: -70px;
     left: 50%;
@@ -503,7 +504,7 @@ footer {
     h1 {
         font-size: 2.5rem;
     }
-    /* Hide arrows on mobile to prevent overflow/mess */
+    /* Hide arrows on mobile to prevent overflow */
     .arrow-wrapper {
         display: none !important;
     }
