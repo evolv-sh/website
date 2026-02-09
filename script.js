@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize Lucide icons
-  lucide.createIcons();
+  if (typeof lucide !== "undefined") {
+    lucide.createIcons();
+  }
 
   // Register GSAP Plugins
   gsap.registerPlugin(ScrollTrigger);
-
-  // Master Timeline configuration
-  const masterTl = gsap.timeline();
 
   // --- 1. HERO SECTION ---
   function initHeroAnimation() {
@@ -30,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
           opacity: 0,
           duration: 1.5,
           ease: "elastic.out(1, 0.5)",
-          clearProps: "all", // Clear properties for hover states
         },
         "-=0.8",
       );
@@ -43,11 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const arrows = document.querySelectorAll(".arrow-wrapper");
 
     arrows.forEach((wrapper) => {
-      const path = wrapper.querySelector("path:first-child"); // Main line
-      const head = wrapper.querySelector("path:last-child"); // Arrow head
+      const path = wrapper.querySelector("path:first-child");
+      const head = wrapper.querySelector("path:last-child");
       const text = wrapper.querySelector(".arrow-text");
 
-      // Calculate path length for draw effect
+      if (!path) return;
+
       const length = path.getTotalLength();
 
       // Set initial states
@@ -59,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
       gsap.set(head, { scale: 0, transformOrigin: "center center" });
       gsap.set(text, { opacity: 0, y: 10, rotation: -5 });
 
-      // Create ScrollTrigger Timeline
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: wrapper,
@@ -68,14 +66,11 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       });
 
-      tl
-        // 1. Draw line
-        .to(path, {
-          strokeDashoffset: 0,
-          duration: 1.2,
-          ease: "power2.inOut",
-        })
-        // 2. Pop arrow head
+      tl.to(path, {
+        strokeDashoffset: 0,
+        duration: 1.2,
+        ease: "power2.inOut",
+      })
         .to(
           head,
           {
@@ -85,35 +80,35 @@ document.addEventListener("DOMContentLoaded", () => {
           },
           "-=0.3",
         )
-        // 3. Reveal text with stamp effect
         .to(
           text,
           {
             opacity: 1,
             y: 0,
-            rotation: -10, // Slight handwriting tilt
+            rotation: -10,
             duration: 0.5,
             ease: "back.out(2)",
           },
           "-=0.4",
         );
 
-      // 4. Continuous Floating
-      gsap.to(wrapper, {
-        y: "-=8",
-        rotation: "1",
-        duration: "random(2, 3)",
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-        delay: "random(0, 1)", // Random start delay
-      });
+      // Continuous Floating (Desktop Only)
+      if (window.innerWidth > 768) {
+        gsap.to(wrapper, {
+          y: "-=8",
+          rotation: "1",
+          duration: "random(2, 3)",
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          delay: "random(0, 1)",
+        });
+      }
     });
   }
 
   // --- 3. STACK CARDS ---
   function initStackAnimation() {
-    // Batch animation for performance
     ScrollTrigger.batch(".stack-card", {
       onEnter: (batch) =>
         gsap.to(batch, {
@@ -152,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
         start: "top 80%",
       },
       y: 100,
-      rotationX: 15, // 3D Tilt effect
+      rotationX: 15,
       opacity: 0,
       duration: 1,
       stagger: 0.2,
@@ -161,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- 5. TERMINAL TYPING ---
+  // --- 5. TERMINAL TYPING (TRIGGERED ON SCROLL) ---
   function initTerminalTyping() {
     const typingArea = document.querySelector(".typing-area");
     if (!typingArea) return;
@@ -176,6 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let phraseIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
+    let started = false; // Flag to prevent multiple starts
 
     const typeEffect = () => {
       const currentPhrase = phrases[phraseIndex];
@@ -201,21 +197,34 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    setTimeout(typeEffect, 1000);
+    // Trigger: Start typing only when terminal is visible
+    ScrollTrigger.create({
+      trigger: ".terminal",
+      start: "top 85%", // Start when top of terminal hits 85% of viewport
+      onEnter: () => {
+        if (!started) {
+          started = true;
+          typeEffect();
+        }
+      },
+      once: true, // Ensure it only triggers once
+    });
   }
 
-  // --- 6. PARALLAX EFFECT ---
+  // --- 6. PARALLAX EFFECT (Disable on Mobile) ---
   function initParallax() {
-    gsap.to(".terminal-container", {
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: 1,
-      },
-      y: 50,
-      ease: "none",
-    });
+    if (window.innerWidth > 768) {
+      gsap.to(".terminal-container", {
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: 1,
+        },
+        y: 50,
+        ease: "none",
+      });
+    }
   }
 
   // --- EXECUTE ---

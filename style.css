@@ -235,6 +235,7 @@ h1 {
     font-size: 0.85rem;
     color: #ccc;
     line-height: 1.6;
+    min-height: 360px;
 }
 
 .cmd-line {
@@ -242,11 +243,14 @@ h1 {
     font-size: 0.9rem;
     line-height: 1.6;
     margin-bottom: 6px;
+
+    white-space: normal;
     word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .prompt {
-    color: #555;
+    color: var(--text-secondary);
     margin-right: 10px;
     user-select: none;
     float: left;
@@ -261,7 +265,7 @@ h1 {
 
     vertical-align: text-bottom;
     margin-bottom: 0px;
-    margin-left: 2px;
+    margin-left: 1px;
 }
 
 /* Arrow System */
@@ -497,25 +501,57 @@ footer {
         padding: 0 24px;
         max-width: 100%;
     }
+
     .hero {
         padding: 100px 24px 60px;
         border-bottom: none;
     }
+
     h1 {
         font-size: 2.5rem;
     }
-    /* Hide arrows on mobile to prevent overflow */
-    .arrow-wrapper {
-        display: none !important;
-    }
+
     .stack-grid,
     .pricing-grid {
         grid-template-columns: 1fr;
     }
+
     .pricing-section {
         padding: 60px 24px;
     }
+
+    .terminal-body {
+        min-height: auto;
+    }
+
     .terminal {
-        margin-top: 40px;
+        margin-top: 60px;
+    }
+
+    /* --- MOBILE ARROWS CONFIG --- */
+    .arrow-wrapper {
+        display: flex !important;
+        transform: scale(0.65);
+        transform-origin: center center;
+    }
+
+    .arrow-hero {
+        right: -40px;
+        top: 80px;
+        bottom: auto;
+        transform: rotate(-5deg) scale(0.65);
+    }
+
+    .arrow-stack {
+        left: -40px;
+        top: -25px;
+        align-items: flex-start;
+        transform: rotate(-10deg) scale(0.65);
+    }
+
+    .arrow-pricing {
+        bottom: -70px;
+        left: 50%;
+        transform: translateX(-50%) scale(0.65);
     }
 }
