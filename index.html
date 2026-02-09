@@ -1,288 +1,580 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>evolv.tech | DevOps-as-a-Service</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;500;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
-    <link href="./style.css" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>evolv.tech | DevOps-as-a-Service</title>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo">
-                <i data-lucide="box" class="text-primary" size="20"></i>
-                evolv.tech
-            </div>
-            <a href="#contact" class="btn btn-primary">
-                Join Beta
-            </a>
-        </div>
-    </nav>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;500;700&family=Kalam:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link href="./style.css" rel="stylesheet" />
 
-    <div class="container">
-        
-        <section class="hero">
-            <div class="hero-content">
-                <div class="tagline">
-                    <i data-lucide="terminal-square" size="14"></i>
-                    DevOps-as-a-Service
+        <script src="https://unpkg.com/lucide@latest"></script>
+    </head>
+    <body>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <i data-lucide="box" class="text-primary" size="20"></i>
+                    evolv.tech
                 </div>
-
-                <h1>
-                    Infrastructure that<br>
-                    <span class="text-indigo">scales while you sleep.</span>
-                </h1>
-
-                <p>
-                    Stop deploying manually. We evolve your fragile, slow manual processes into automated, resilient, and scalable systems.
-                </p>
-
-                <div style="display: flex; gap: 12px; margin-bottom: 60px; flex-wrap: wrap;">
-                    <a href="#services" class="btn btn-primary">View Solutions</a>
-                    <a href="#stack" class="btn btn-outline">Tech Stack</a>
-                </div>
+                <a href="#contact" class="btn btn-primary"> Join Beta </a>
             </div>
+        </nav>
 
-            <div class="terminal-container">
-                <div class="terminal">
-                    <div class="terminal-header">
-                        <div class="dot dot-red"></div>
-                        <div class="dot dot-yellow"></div>
-                        <div class="dot dot-green"></div>
-                        <span class="mono" style="font-size: 11px; margin-left: auto; color: #555;">root@evolv:~/infra</span>
+        <div class="container">
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="tagline">
+                        <i data-lucide="terminal-square" size="14"></i>
+                        DevOps-as-a-Service
                     </div>
-                    <div class="terminal-body">
-                        <div class="cmd-line">
-                            <span class="prompt">➜</span>
-                            <span>terraform plan</span>
-                        </div>
-                        <span class="output">
-                            Terraform used the selected providers to generate the following execution plan.<br>
-                            Resource actions are indicated with the following symbols:<br>
-                            <span style="color: var(--emerald);">+ create</span>
-                        </span>
-                        
-                        <div class="cmd-line">
-                            <span class="prompt">➜</span>
-                            <span>docker compose up -d --scale web=5</span>
-                        </div>
-                        <span class="output" style="color: var(--emerald);">
-                            [+] Running 6/6<br>
-                            ✔ Network app_net Created<br>
-                            ✔ Container db Started<br>
-                            ✔ Container web-1 Started<br>
-                            ✔ Container web-2 Started<br>
-                            ✔ Container web-3 Started<br>
-                            ✔ Container web-4 Started<br>
-                            ✔ Container web-5 Started
-                        </span>
 
-                        <div class="cmd-line">
-                            <span class="prompt">➜</span>
-                            <span class="typing-area"></span><span class="cursor"></span>
-                        </div>
-                    </div>
-                </div>
+                    <h1>
+                        Infrastructure that<br />
+                        <span class="text-indigo">scales while you sleep.</span>
+                    </h1>
 
-                <div class="arrow-wrapper arrow-hero">
-                    <div class="arrow-text">100% Code!</div>
-                    <svg class="arrow-svg" width="120" height="80" viewBox="0 0 120 80" fill="none">
-                        <path d="M 100 10 C 100 40, 60 50, 10 60" 
-                              stroke="#FCD34D" stroke-width="2.5" stroke-linecap="round" fill="none" />
-                        <path d="M 25 50 L 10 60 L 25 68" 
-                              stroke="#FCD34D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </div>
-            </div>
-        </section>
-
-        <section class="icp-section">
-            <div style="display: flex; gap: 40px; flex-wrap: wrap; align-items: flex-start;">
-                <div style="flex: 1; min-width: 250px;">
-                    <h2 style="margin-bottom: 16px;">Who We Work With</h2>
-                    <p class="text-sec">
-                        We don't serve everyone. Our services are specifically designed for companies that value engineering excellence.
-                    </p>
-                </div>
-                <div style="flex: 2; display: flex; gap: 30px; flex-wrap: wrap;">
-                    <div style="display: flex; gap: 16px; align-items: flex-start;">
-                        <i data-lucide="code-2" class="text-indigo" style="margin-top: 4px;"></i>
-                        <div>
-                            <h4 class="mono">Software Houses</h4>
-                            <p class="text-sec" style="font-size: 0.85rem;">Great at coding features but deploying manually. Deadlines slipped due to server management.</p>
-                        </div>
-                    </div>
-                    <div style="display: flex; gap: 16px; align-items: flex-start;">
-                        <i data-lucide="rocket" class="text-indigo" style="margin-top: 4px;"></i>
-                        <div>
-                            <h4 class="mono">Solo Founders</h4>
-                            <p class="text-sec" style="font-size: 0.85rem;">SaaS product gaining traffic, fear of server downtime keeping you up at night.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="stack" style="padding: 100px 40px; border-bottom: 1px solid var(--border);">
-            <div class="section-header">
-                <div class="arrow-wrapper arrow-stack">
-                    <div class="arrow-text">No Bloatware</div>
-                    <svg class="arrow-svg" width="100" height="60" viewBox="0 0 100 60" fill="none">
-                        <path d="M 10 10 C 40 10, 50 30, 90 50" 
-                              stroke="#F43F5E" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-                        <path d="M 80 40 L 90 50 L 75 55" 
-                              stroke="#F43F5E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-
-                <span class="label">// THE SECRET SAUCE</span>
-                <h2>Our Technology Stack</h2>
-                <p class="text-sec" style="max-width: 500px;">We choose tools that provide high performance and perfect isolation.</p>
-            </div>
-
-            <div class="stack-grid">
-                <div class="stack-card">
-                    <div class="stack-icon"><i data-lucide="cpu" size="24"></i></div>
-                    <div class="stack-title">Arch Linux (Hardened)</div>
-                    <div class="stack-desc">Minimalist, bloat-free, and running the latest kernels for maximum performance.</div>
-                </div>
-                <div class="stack-card">
-                    <div class="stack-icon"><i data-lucide="file-code-2" size="24"></i></div>
-                    <div class="stack-title">Terraform & Ansible</div>
-                    <div class="stack-desc">Infrastructure defined as code. Reproducible in minutes.</div>
-                </div>
-                <div class="stack-card">
-                    <div class="stack-icon"><i data-lucide="container" size="24"></i></div>
-                    <div class="stack-title">Docker & Podman</div>
-                    <div class="stack-desc">Perfect application isolation. Ensuring "Works everywhere".</div>
-                </div>
-                <div class="stack-card">
-                    <div class="stack-icon"><i data-lucide="activity" size="24"></i></div>
-                    <div class="stack-title">Prometheus & Grafana</div>
-                    <div class="stack-desc">Real-time metrics to catch issues before your users do.</div>
-                </div>
-                <div class="stack-card">
-                    <div class="stack-icon"><i data-lucide="network" size="24"></i></div>
-                    <div class="stack-title">Envoy Proxy</div>
-                    <div class="stack-desc">Advanced load balancing & blue-green deployment.</div>
-                </div>
-                <div class="stack-card">
-                    <div class="stack-icon"><i data-lucide="git-merge" size="24"></i></div>
-                    <div class="stack-title">GitLab CI / GH Actions</div>
-                    <div class="stack-desc">Full automation from code commit to production.</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="pricing-section">
-            <div class="section-header" style="text-align: center;">
-                <span class="label">// OFFERINGS</span>
-                <h2>Fractional DevOps Models</h2>
-                <p class="text-sec" style="margin: 0 auto; max-width: 500px;">We don't sell "hours", we sell Reliability & Availability.</p>
-            </div>
-
-            <div class="pricing-grid">
-                <div class="plan-card">
-                    <div class="plan-name">AUDIT & MIGRATION</div>
-                    <div class="plan-price" style="font-size: 1.25rem;">One-Time</div>
-                    <div class="plan-desc">Entry point for new clients. Clearing "Technical Debt" before entering a retainer.</div>
-                    <ul class="feature-list">
-                        <li class="feature-item"><i data-lucide="check" class="check-icon"></i> Server security audit</li>
-                        <li class="feature-item"><i data-lucide="check" class="check-icon"></i> Legacy app dockerization</li>
-                        <li class="feature-item"><i data-lucide="check" class="check-icon"></i> Initial Terraform setup</li>
-                        <li class="feature-item"><i data-lucide="check" class="check-icon"></i> Output: Clean Infra</li>
-                    </ul>
-                    <button class="btn btn-outline" style="width: 100%; justify-content: center;">Start Audit</button>
-                </div>
-
-                <div class="plan-card featured">
-                    <div class="plan-name">PEACE OF MIND</div>
-                    <div class="plan-price">Retainer</div>
-                    <div class="plan-desc">Ideal for small Software Houses needing stability.</div>
-                    <ul class="feature-list">
-                        <li class="feature-item"><i data-lucide="check" class="check-icon"></i> Server Maintenance & Patching</li>
-                        <li class="feature-item"><i data-lucide="check" class="check-icon"></i> Basic Monitoring (Uptime)</li>
-                        <li class="feature-item"><i data-lucide="check" class="check-icon"></i> Automated Weekly Backups</li>
-                        <li class="feature-item"><i data-lucide="check" class="check-icon"></i> Response: Next Business Day</li>
-                    </ul>
-                    <button class="btn btn-primary" style="width: 100%; justify-content: center;">Select Plan</button>
-
-                    <div class="arrow-wrapper arrow-pricing">
-                        <svg class="arrow-svg" width="60" height="80" viewBox="0 0 60 80" fill="none">
-                            <path d="M 30 75 C 30 50, 50 40, 30 5" 
-                                  stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-                            <path d="M 20 15 L 30 5 L 40 15" 
-                                  stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <div class="arrow-text">Start Here</div>
-                    </div>
-                </div>
-
-                <div class="plan-card">
-                    <div class="plan-name">THE EVOLUTION</div>
-                    <div class="plan-price">Growth</div>
-                    <div class="plan-desc">Ideal for Startups with active users requiring scaling.</div>
-                    <ul class="feature-list">
-                        <li class="feature-item"><i data-lucide="check" class="check-icon"></i> <strong>Unlimited</strong> Deployments (CI/CD)</li>
-                        <li class="feature-item"><i data-lucide="check" class="check-icon"></i> Advanced Monitoring (Grafana)</li>
-                        <li class="feature-item"><i data-lucide="check" class="check-icon"></i> Centralized Log Management</li>
-                        <li class="feature-item"><i data-lucide="check" class="check-icon"></i> Monthly Cost Optimization</li>
-                        <li class="feature-item"><i data-lucide="check" class="check-icon"></i> Priority Response (4 Hours)</li>
-                    </ul>
-                    <button class="btn btn-outline" style="width: 100%; justify-content: center;">Contact Sales</button>
-                </div>
-            </div>
-        </section>
-
-        <footer id="contact">
-            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px;">
-                <div style="max-width: 300px;">
-                    <div class="logo" style="margin-bottom: 16px;">
-                        <i data-lucide="box" size="20"></i>
-                        evolv.tech
-                    </div>
                     <p>
-                        DevOps-as-a-Service for growing teams. Built by engineers who've been on-call at 3 AM too many times.
+                        Stop deploying manually. We evolve your fragile, slow
+                        manual processes into automated, resilient, and scalable
+                        systems.
+                    </p>
+
+                    <div
+                        style="
+                            display: flex;
+                            gap: 12px;
+                            margin-bottom: 60px;
+                            flex-wrap: wrap;
+                        "
+                    >
+                        <a href="#services" class="btn btn-primary"
+                            >View Solutions</a
+                        >
+                        <a href="#stack" class="btn btn-outline">Tech Stack</a>
+                    </div>
+                </div>
+
+                <div class="terminal-container">
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <div class="dot dot-red"></div>
+                            <div class="dot dot-yellow"></div>
+                            <div class="dot dot-green"></div>
+                            <span
+                                class="mono"
+                                style="
+                                    font-size: 11px;
+                                    margin-left: auto;
+                                    color: #555;
+                                "
+                                >root@evolv:~/infra</span
+                            >
+                        </div>
+                        <div class="terminal-body">
+                            <div class="cmd-line">
+                                <span class="prompt">➜</span>
+                                <span>terraform plan</span>
+                            </div>
+                            <span class="output">
+                                Terraform used the selected providers to
+                                generate the following execution plan.<br />
+                                Resource actions are indicated with the
+                                following symbols:<br />
+                                <span style="color: var(--emerald)"
+                                    >+ create</span
+                                >
+                            </span>
+
+                            <div class="cmd-line">
+                                <span class="prompt">➜</span>
+                                <span>docker compose up -d --scale web=5</span>
+                            </div>
+                            <span class="output" style="color: var(--emerald)">
+                                [+] Running 6/6<br />
+                                ✔ Network app_net Created<br />
+                                ✔ Container db Started<br />
+                                ✔ Container web-1 Started<br />
+                                ✔ Container web-2 Started<br />
+                                ✔ Container web-3 Started<br />
+                                ✔ Container web-4 Started<br />
+                                ✔ Container web-5 Started
+                            </span>
+
+                            <div class="cmd-line">
+                                <span class="prompt">➜</span>
+                                <span class="typing-area"></span
+                                ><span class="cursor"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="arrow-wrapper arrow-hero">
+                        <div class="arrow-text">100% Code!</div>
+                        <svg
+                            class="arrow-svg"
+                            width="120"
+                            height="80"
+                            viewBox="0 0 120 80"
+                            fill="none"
+                        >
+                            <path
+                                d="M 100 10 C 100 40, 60 50, 10 60"
+                                stroke="#FCD34D"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                                fill="none"
+                            />
+                            <path
+                                d="M 25 50 L 10 60 L 25 68"
+                                stroke="#FCD34D"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <section class="icp-section">
+                <div
+                    style="
+                        display: flex;
+                        gap: 40px;
+                        flex-wrap: wrap;
+                        align-items: flex-start;
+                    "
+                >
+                    <div style="flex: 1; min-width: 250px">
+                        <h2 style="margin-bottom: 16px">Who We Work With</h2>
+                        <p class="text-sec">
+                            We don't serve everyone. Our services are
+                            specifically designed for companies that value
+                            engineering excellence.
+                        </p>
+                    </div>
+                    <div
+                        style="
+                            flex: 2;
+                            display: flex;
+                            gap: 30px;
+                            flex-wrap: wrap;
+                        "
+                    >
+                        <div
+                            style="
+                                display: flex;
+                                gap: 16px;
+                                align-items: flex-start;
+                            "
+                        >
+                            <i
+                                data-lucide="code-2"
+                                class="text-indigo"
+                                style="margin-top: 4px"
+                            ></i>
+                            <div>
+                                <h4 class="mono">Software Houses</h4>
+                                <p class="text-sec" style="font-size: 0.85rem">
+                                    Great at coding features but deploying
+                                    manually. Deadlines slipped due to server
+                                    management.
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            style="
+                                display: flex;
+                                gap: 16px;
+                                align-items: flex-start;
+                            "
+                        >
+                            <i
+                                data-lucide="rocket"
+                                class="text-indigo"
+                                style="margin-top: 4px"
+                            ></i>
+                            <div>
+                                <h4 class="mono">Solo Founders</h4>
+                                <p class="text-sec" style="font-size: 0.85rem">
+                                    SaaS product gaining traffic, fear of server
+                                    downtime keeping you up at night.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                id="stack"
+                style="
+                    padding: 100px 40px;
+                    border-bottom: 1px solid var(--border);
+                "
+            >
+                <div class="section-header">
+                    <div class="arrow-wrapper arrow-stack">
+                        <div class="arrow-text">No Bloatware</div>
+                        <svg
+                            class="arrow-svg"
+                            width="100"
+                            height="60"
+                            viewBox="0 0 100 60"
+                            fill="none"
+                        >
+                            <path
+                                d="M 10 10 C 40 10, 50 30, 90 50"
+                                stroke="#F43F5E"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                                fill="none"
+                            />
+                            <path
+                                d="M 80 40 L 90 50 L 75 55"
+                                stroke="#F43F5E"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </div>
+
+                    <span class="label">// THE SECRET SAUCE</span>
+                    <h2>Our Technology Stack</h2>
+                    <p class="text-sec" style="max-width: 500px">
+                        We choose tools that provide high performance and
+                        perfect isolation.
                     </p>
                 </div>
-                <div>
-                    <h4 style="margin-bottom: 16px; color: white;">Connect</h4>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 8px;">
-                            <a href="https://github.com/evolv-sh" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 8px;">
-                                <i data-lucide="github" size="16"></i> GitHub Organization
-                            </a>
-                        </li>
-                        <li style="margin-bottom: 8px;">
-                            <a href="mailto:ilhamdzaky2007@gmail.com?subject=Inquiry%20regarding%20DevOps%20Services&body=Hi%20evolv.tech%20team%2C%0A%0AI%27m%20interested%20in%20your%20DevOps%20services.%20Could%20we%20schedule%20a%20call%20to%20discuss%20our%20infrastructure%20needs%3F%0A%0ABest%20regards%2C" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 8px;">
-                                <i data-lucide="mail" size="16"></i> Email Us
-                            </a>
-                        </li>
-                        <li style="margin-bottom: 8px;">
-                            <a href="#" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 8px;">
-                                <i data-lucide="linkedin" size="16"></i> LinkedIn
-                            </a>
-                        </li>
-                    </ul>
+
+                <div class="stack-grid">
+                    <div class="stack-card">
+                        <div class="stack-icon">
+                            <i data-lucide="cpu" size="24"></i>
+                        </div>
+                        <div class="stack-title">Arch Linux (Hardened)</div>
+                        <div class="stack-desc">
+                            Minimalist, bloat-free, and running the latest
+                            kernels for maximum performance.
+                        </div>
+                    </div>
+                    <div class="stack-card">
+                        <div class="stack-icon">
+                            <i data-lucide="file-code-2" size="24"></i>
+                        </div>
+                        <div class="stack-title">Terraform & Ansible</div>
+                        <div class="stack-desc">
+                            Infrastructure defined as code. Reproducible in
+                            minutes.
+                        </div>
+                    </div>
+                    <div class="stack-card">
+                        <div class="stack-icon">
+                            <i data-lucide="container" size="24"></i>
+                        </div>
+                        <div class="stack-title">Docker & Podman</div>
+                        <div class="stack-desc">
+                            Perfect application isolation. Ensuring "Works
+                            everywhere".
+                        </div>
+                    </div>
+                    <div class="stack-card">
+                        <div class="stack-icon">
+                            <i data-lucide="activity" size="24"></i>
+                        </div>
+                        <div class="stack-title">Prometheus & Grafana</div>
+                        <div class="stack-desc">
+                            Real-time metrics to catch issues before your users
+                            do.
+                        </div>
+                    </div>
+                    <div class="stack-card">
+                        <div class="stack-icon">
+                            <i data-lucide="network" size="24"></i>
+                        </div>
+                        <div class="stack-title">Envoy Proxy</div>
+                        <div class="stack-desc">
+                            Advanced load balancing & blue-green deployment.
+                        </div>
+                    </div>
+                    <div class="stack-card">
+                        <div class="stack-icon">
+                            <i data-lucide="git-merge" size="24"></i>
+                        </div>
+                        <div class="stack-title">GitLab CI / GH Actions</div>
+                        <div class="stack-desc">
+                            Full automation from code commit to production.
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div style="border-top: 1px solid var(--border); margin-top: 40px; padding-top: 20px; display: flex; justify-content: space-between; font-family: var(--font-code); font-size: 0.8rem;">
-                <div>© 2026 evolv.tech</div>
-                <div>Built with Arch btw</div>
-            </div>
-        </footer>
+            </section>
 
-    </div>
+            <section id="services" class="pricing-section">
+                <div class="section-header" style="text-align: center">
+                    <span class="label">// OFFERINGS</span>
+                    <h2>Fractional DevOps Models</h2>
+                    <p
+                        class="text-sec"
+                        style="margin: 0 auto; max-width: 500px"
+                    >
+                        We don't sell "hours", we sell Reliability &
+                        Availability.
+                    </p>
+                </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    
-    <script src="script.js"></script>
-</body>
+                <div class="pricing-grid">
+                    <div class="plan-card">
+                        <div class="plan-name">AUDIT & MIGRATION</div>
+                        <div class="plan-price" style="font-size: 1.25rem">
+                            One-Time
+                        </div>
+                        <div class="plan-desc">
+                            Entry point for new clients. Clearing "Technical
+                            Debt" before entering a retainer.
+                        </div>
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <i data-lucide="check" class="check-icon"></i>
+                                Server security audit
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="check" class="check-icon"></i>
+                                Legacy app dockerization
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="check" class="check-icon"></i>
+                                Initial Terraform setup
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="check" class="check-icon"></i>
+                                Output: Clean Infra
+                            </li>
+                        </ul>
+                        <a
+                            href="mailto:ilhamdzaky2007@gmail.com?subject=Request%20Audit%20%26%20Migration&body=Hi%20evolv.tech%2C%0A%0AWe%20need%20help%20auditing%20our%20infrastructure."
+                            class="btn btn-outline"
+                            style="
+                                width: 100%;
+                                justify-content: center;
+                                display: flex;
+                            "
+                        >
+                            Start Audit
+                        </a>
+                    </div>
+
+                    <div class="plan-card featured">
+                        <div class="plan-name">PEACE OF MIND</div>
+                        <div class="plan-price">Retainer</div>
+                        <div class="plan-desc">
+                            Ideal for small Software Houses needing stability.
+                        </div>
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <i data-lucide="check" class="check-icon"></i>
+                                Server Maintenance & Patching
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="check" class="check-icon"></i>
+                                Basic Monitoring (Uptime)
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="check" class="check-icon"></i>
+                                Automated Weekly Backups
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="check" class="check-icon"></i>
+                                Response: Next Business Day
+                            </li>
+                        </ul>
+
+                        <a
+                            href="https://cal.com/shafwan-ops"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-primary"
+                            style="
+                                width: 100%;
+                                justify-content: center;
+                                display: flex;
+                            "
+                        >
+                            Book Intro Call
+                        </a>
+
+                        <div class="arrow-wrapper arrow-pricing">
+                            <svg
+                                class="arrow-svg"
+                                width="60"
+                                height="80"
+                                viewBox="0 0 60 80"
+                                fill="none"
+                            >
+                                <path
+                                    d="M 30 75 C 30 50, 50 40, 30 5"
+                                    stroke="#60A5FA"
+                                    stroke-width="2.5"
+                                    stroke-linecap="round"
+                                    fill="none"
+                                />
+                                <path
+                                    d="M 20 15 L 30 5 L 40 15"
+                                    stroke="#60A5FA"
+                                    stroke-width="2.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                            <div class="arrow-text">Start Here</div>
+                        </div>
+                    </div>
+
+                    <div class="plan-card">
+                        <div class="plan-name">THE EVOLUTION</div>
+                        <div class="plan-price">Growth</div>
+                        <div class="plan-desc">
+                            Ideal for Startups with active users requiring
+                            scaling.
+                        </div>
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <i data-lucide="check" class="check-icon"></i>
+                                <strong>Unlimited</strong> Deployments (CI/CD)
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="check" class="check-icon"></i>
+                                Advanced Monitoring (Grafana)
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="check" class="check-icon"></i>
+                                Centralized Log Management
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="check" class="check-icon"></i>
+                                Monthly Cost Optimization
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="check" class="check-icon"></i>
+                                Priority Response (4 Hours)
+                            </li>
+                        </ul>
+                        <a
+                            href="mailto:ilhamdzaky2007@gmail.com?subject=Enterprise%20Growth%20Inquiry&body=Hi%2C%20we%20are%20scaling%20fast%20and%20need%20full%20DevOps%20support."
+                            class="btn btn-outline"
+                            style="
+                                width: 100%;
+                                justify-content: center;
+                                display: flex;
+                            "
+                        >
+                            Contact Sales
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <footer id="contact">
+                <div
+                    style="
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                        gap: 40px;
+                    "
+                >
+                    <div style="max-width: 300px">
+                        <div class="logo" style="margin-bottom: 16px">
+                            <i data-lucide="box" size="20"></i>
+                            evolv.tech
+                        </div>
+                        <p>
+                            DevOps-as-a-Service for growing teams. Built by
+                            engineers who've been on-call at 3 AM too many
+                            times.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 16px; color: white">
+                            Connect
+                        </h4>
+                        <ul style="list-style: none">
+                            <li style="margin-bottom: 8px">
+                                <a
+                                    href="https://github.com/evolv-sh"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style="
+                                        color: inherit;
+                                        text-decoration: none;
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 8px;
+                                    "
+                                >
+                                    <i data-lucide="github" size="16"></i>
+                                    GitHub Organization
+                                </a>
+                            </li>
+                            <li style="margin-bottom: 8px">
+                                <a
+                                    href="mailto:ilhamdzaky2007@gmail.com?subject=Inquiry%20regarding%20DevOps%20Services&body=Hi%20evolv.tech%20team%2C%0A%0AI%27m%20interested%20in%20your%20DevOps%20services.%20Could%20we%20schedule%20a%20call%20to%20discuss%20our%20infrastructure%20needs%3F%0A%0ABest%20regards%2C"
+                                    style="
+                                        color: inherit;
+                                        text-decoration: none;
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 8px;
+                                    "
+                                >
+                                    <i data-lucide="mail" size="16"></i> Email
+                                    Us
+                                </a>
+                            </li>
+                            <li style="margin-bottom: 8px">
+                                <a
+                                    href="#"
+                                    style="
+                                        color: inherit;
+                                        text-decoration: none;
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 8px;
+                                    "
+                                >
+                                    <i data-lucide="linkedin" size="16"></i>
+                                    LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div
+                    style="
+                        border-top: 1px solid var(--border);
+                        margin-top: 40px;
+                        padding-top: 20px;
+                        display: flex;
+                        justify-content: space-between;
+                        font-family: var(--font-code);
+                        font-size: 0.8rem;
+                    "
+                >
+                    <div>© 2026 evolv.tech</div>
+                    <div>Built with Arch btw</div>
+                </div>
+            </footer>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+        <script src="script.js"></script>
+    </body>
 </html>
